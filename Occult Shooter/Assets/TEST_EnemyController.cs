@@ -1,5 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+/* *
+* @file TEST_EnemyController.cs
+* @author Alec Ege
+* @brief Moves an object using a NavMesh by getting a valid clicked locaiton
+* @date 2024 - 05 - 23
+*/
+
+
 using UnityEngine;
 using UnityEngine.AI;
 
