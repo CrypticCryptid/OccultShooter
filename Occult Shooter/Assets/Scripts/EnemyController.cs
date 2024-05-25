@@ -12,8 +12,9 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour, ITakeDamage, IDealDamage
 {
-    //Health variable
+    //Stat variables
     public int health;
+    public int waveCost;
     
     //Attack variables
     public int damage;
@@ -75,6 +76,14 @@ public class EnemyController : MonoBehaviour, ITakeDamage, IDealDamage
     */
     public void TakeDamage(int value) {
         health -= value;
+    }
+
+    /**
+    * Gets the cost of the enemy
+    * @return int
+    */
+    public int GetWaveCost() {
+        return waveCost;
     }
 
     //This helps visualize the attack zone
