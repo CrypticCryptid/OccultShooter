@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/Occult Shooter/ProjectSettings
+Occult Shooter/.vsconfig
+Occult Shooter/ProjectSettings/ProjectSettings.asset
+Occult Shooter/ProjectSettings/ProjectSettings.asset
