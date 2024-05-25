@@ -1,10 +1,3 @@
-/* *
-* @file EnemyController.cs
-* @author Alec Ege
-* @brief A general enemy controller intended to use as the basis for all enemies
-* @date 2024 - 05 - 24
-*/
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,21 +5,25 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour, ITakeDamage, IDealDamage
 {
-    //Health variable
+    //Stat variables
     public int health;
-    
+    public int waveCost;
+
     //Attack variables
     public int damage;
     public float attackRange;
     public Transform attackPos;
     public LayerMask whatIsTargets;
-    
+
     private float timeBtwAttack;
     public float startTimeBtwAttack;
 
     //Movement variables
     public NavMeshAgent agent;
     public GameObject target;
+
+    // Reference to the WaveController
+    public WaveController waveController;
 
     //Call on Awake for prefabs
     void Awake() {
@@ -40,7 +37,7 @@ public class EnemyController : MonoBehaviour, ITakeDamage, IDealDamage
 
         //Mange object's health
         if(health <= 0) {
-            Destroy(gameObject);
+            Die();
         }
 
         //Object Attacks after cool down and within range
@@ -52,7 +49,7 @@ public class EnemyController : MonoBehaviour, ITakeDamage, IDealDamage
                 for(int i = 0; i < targetsToDamage.Length; i++) {
                     targetsToDamage[i].GetComponent<ITakeDamage>().TakeDamage(DealDamage()); //Do the attack
                 }
-            
+
                 timeBtwAttack = startTimeBtwAttack;
             }
         } else {
@@ -77,9 +74,27 @@ public class EnemyController : MonoBehaviour, ITakeDamage, IDealDamage
         health -= value;
     }
 
+    /**
+    * Gets the cost of the enemy
+    * @return int
+    */
+    public int GetWaveCost() {
+        return waveCost;
+    }
+
     //This helps visualize the attack zone
     void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    void Die() {
+        // Notify the WaveController to remove this enemy from the list
+        if (waveController != null) {
+            waveController.RemoveEnemy(gameObject);
+        }
+
+        // Destroy the enemy game object
+        Destroy(gameObject);
     }
 }
