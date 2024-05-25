@@ -10,7 +10,7 @@ public class WaveController : MonoBehaviour
     public GameObject[] enemies;
     public Transform[] spawnPos;
     public int waveNum;
-    private List<GameObject> waveEnemies = new List<GameObject>();
+    public List<GameObject> waveEnemies = new List<GameObject>();
 
     private float timeBtwWaves;
     public float startTimeBtwWaves;
@@ -18,24 +18,31 @@ public class WaveController : MonoBehaviour
     void Start()
     {
         cap = capBase;
+        timeBtwWaves = startTimeBtwWaves;
         CreateWave();
     }
 
     void Update()
     {
-        // if (waveNum % 5 == 0) {
-        //     capBase++;
-        // }
+        if(waveEnemies.Count <= 0) {
+            if(timeBtwWaves <= 0) {
+                CreateWave();
+                timeBtwWaves = startTimeBtwWaves;
+            } else {
+                timeBtwWaves -= Time.deltaTime; //This is the time between waves
+            } 
+        }
 
-        // if(timeBtwWaves <= 0) {
-        //     CreateWave();
-        //     timeBtwWaves = startTimeBtwWaves;
-        // } else {
-        //     timeBtwWaves -= Time.deltaTime; //This is the time between waves
-        // }
+
     }
 
     void CreateWave() {
+        waveNum++;
+        // if (waveNum % 5 == 0) {
+        //     capBase++;
+        // }
+        cap = capBase;
+
         wavePoints = waveNum * 5;
 
         while(wavePoints > 0) {
@@ -46,9 +53,23 @@ public class WaveController : MonoBehaviour
             int ranEnemy = Random.Range(0, cap);
             GameObject enemyToSpawn = enemies[ranEnemy];
             wavePoints -= enemyToSpawn.GetComponent<EnemyController>().GetWaveCost();
-            waveEnemies.Add(enemyToSpawn);
             int ranSpawnPos = Random.Range(0, spawnPos.Length);
-            Instantiate(enemyToSpawn, spawnPos[ranSpawnPos].position, Quaternion.identity);
+            GameObject spawnedEnemy = Instantiate(enemyToSpawn, spawnPos[ranSpawnPos].position, Quaternion.identity);
+            waveEnemies.Add(spawnedEnemy);
+
+            // Assign the WaveController reference to the enemy
+            EnemyController enemyController = spawnedEnemy.GetComponent<EnemyController>();
+            if (enemyController != null) {
+                enemyController.waveController = this;
+            }
+        }
+    }
+
+    public void RemoveEnemy(GameObject enemy)
+    {
+        if (waveEnemies.Contains(enemy))
+        {
+            waveEnemies.Remove(enemy);
         }
     }
 }
