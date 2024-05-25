@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4d58aed02e1764f85585ea835d10fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
   waveCost: 3
   damage: 1
   attackRange: 1
@@ -155,6 +155,7 @@ MonoBehaviour:
   startTimeBtwAttack: 1
   agent: {fileID: 935593634686638038}
   target: {fileID: 0}
+  waveController: {fileID: 0}
 --- !u!1 &2095783405935861812
 GameObject:
   m_ObjectHideFlags: 0
