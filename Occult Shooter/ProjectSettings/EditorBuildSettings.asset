@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ALEC Enemy Testing.unity
+    guid: add4e83f7c6d96f4098517b2ff69935b
   m_configObjects: {}
