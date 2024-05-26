@@ -1360,7 +1360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 574069977}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1079
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1079
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -2440,6 +2440,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 427758221915410928, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038468072593522117, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2698935481315083206, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362325827973021480, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362325827973021480, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3958506055117734585, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2480,8 +2500,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4652191463232021580, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5156122993519721058, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: jumpForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569886625093858963, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8679844249440376327, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
+      propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2709,7 +2741,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1079
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
