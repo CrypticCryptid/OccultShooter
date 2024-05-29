@@ -12,8 +12,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        LockCursor();
     }
 
     private void Update()
@@ -28,5 +27,15 @@ public class CameraController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+    }
+
+    public void LockCursor() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;        
+    }
+
+    public void UnlockCursor() {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
