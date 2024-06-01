@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
+public class CharacterStats : MonoBehaviour, ITakeDamage
 {
     public int maxHealth = 100;
     public int currentHealth { get; private set; }

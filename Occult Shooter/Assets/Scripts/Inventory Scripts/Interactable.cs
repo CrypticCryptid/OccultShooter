@@ -5,6 +5,7 @@ public class Interactable : MonoBehaviour
     public float radius = 3f;
     public Transform interactionTransform;
 
+    bool isFocus = false;
     Transform player;
 
     bool hasInteracted = false;
@@ -15,12 +16,12 @@ public class Interactable : MonoBehaviour
     }    
 
     void Awake() {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update() {
-        if(Input.GetButtonDown("Interact")) {
-            if(!hasInteracted) {
+        if(isFocus && !hasInteracted) {
+            if(Input.GetButtonDown("Interact")) {
                 float distance = Vector3.Distance(player.position, interactionTransform.position);
                 if(distance <= radius) {
                     Interact();
@@ -28,6 +29,16 @@ public class Interactable : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void OnFocused(Transform playerTransform) {
+        isFocus = true;
+        player = playerTransform;
+    }
+
+    public void OnDefocused() {
+        isFocus = false;
+        player = null;
     }
 
     void OnDrawGizmosSelected() {
