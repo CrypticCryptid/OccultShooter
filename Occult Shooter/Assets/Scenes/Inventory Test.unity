@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 621892735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c712cd9934e3ef448bc5f4a15fd3e60d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aa8cab58d2e6d3418b9f36cbd3a1b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1262320474}
@@ -3351,11 +3351,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 57269292498270637, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: sensX
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 57269292498270637, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: sensY
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 171427422146026096, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: m_BackGroundColor.b
