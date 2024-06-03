@@ -35,7 +35,7 @@ public class EquipmentManager : MonoBehaviour
 
         if(currentEquipment[slotIndex] != null) {
             oldItem = currentEquipment[slotIndex];
-            inventory.Add(oldItem);
+            inventory.Add(oldItem); //Make item appear on pedestal
         }
 
         if(onEquipmentChanged != null) {
