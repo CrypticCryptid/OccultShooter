@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Dagger 2
   icon: {fileID: -8062462, guid: 8a57807ff4ad3f9498b091497c02a940, type: 3}
+  model: {fileID: 4227560999555793003, guid: 3f54f7d8b19ac3045a062e7fa8339cb8, type: 3}
   isDefaultItem: 0
   equipSlot: 4
   armorModifier: 0

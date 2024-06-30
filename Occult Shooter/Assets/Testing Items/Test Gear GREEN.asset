@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Gun 1
   icon: {fileID: 1603835829, guid: 8a57807ff4ad3f9498b091497c02a940, type: 3}
+  model: {fileID: 4787763139108910762, guid: 44509c94c6a792049aba2aaed2ad7dc0, type: 3}
   isDefaultItem: 0
   equipSlot: 3
   armorModifier: 0

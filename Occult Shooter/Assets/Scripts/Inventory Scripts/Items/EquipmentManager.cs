@@ -29,19 +29,22 @@ public class EquipmentManager : MonoBehaviour
     }
 
     public void Equip(Equipment newItem) {
-        int slotIndex = (int)newItem.equipSlot;
+        int slotIndex = (int)newItem.equipSlot; //Gets the type (knife, gun, spell, etc.) of the new item being picked up
 
         Equipment oldItem = null;
 
+        //Checks if something is already in the slot the new item is trying to fill
+        //If there is, the item filling the slot (the old item) is put back into the inventory
         if(currentEquipment[slotIndex] != null) {
             oldItem = currentEquipment[slotIndex];
-            inventory.Add(oldItem); //Make item appear on pedestal
+            inventory.Add(oldItem);
         }
 
         if(onEquipmentChanged != null) {
             onEquipmentChanged.Invoke(newItem, oldItem);
         }
 
+        //Equips new item to player (removes from inventory)
         currentEquipment[slotIndex] = newItem;
     }
 
@@ -64,10 +67,10 @@ public class EquipmentManager : MonoBehaviour
         }
     }
 
+    //This method is unnecessary for our game (at least I think so)
     void Update() {
         if(Input.GetKeyDown(KeyCode.U)) {
             UnequipAll();
         }
     }
-
 }

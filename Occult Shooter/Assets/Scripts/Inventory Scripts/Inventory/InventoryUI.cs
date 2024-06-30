@@ -4,17 +4,21 @@ public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
     public GameObject inventoryUI;
+
+    public Transform pedestalsParent;
     
     Inventory inventory;
 
     InventorySlot[] slots;
+    InventoryPedestal[] pedestals;
 
     void Start()
     {
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        //slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        pedestals = pedestalsParent.GetComponentsInChildren<InventoryPedestal>();
     }
     
     void Update()
@@ -25,12 +29,20 @@ public class InventoryUI : MonoBehaviour
     }
 
     void UpdateUI() {
-        for(int i = 0; i < slots.Length; i++) {
+        // for(int i = 0; i < slots.Length; i++) {
+        //     if(i < inventory.items.Count) {
+        //         slots[i].AddItem(inventory.items[i]); //Make item appear on pedestal
+        //     } else {
+        //         slots[i].ClearSlot();
+        //     }
+        // }
+
+        for(int i = 0; i < pedestals.Length; i++) {
             if(i < inventory.items.Count) {
-                slots[i].AddItem(inventory.items[i]);
+                pedestals[i].AddItem(inventory.items[i]); //Make item appear on pedestal
             } else {
-                slots[i].ClearSlot();
+                pedestals[i].ClearSlot();
             }
-        }
+        }        
     }   
 }

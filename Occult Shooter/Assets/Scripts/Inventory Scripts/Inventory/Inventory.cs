@@ -27,6 +27,8 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item) {
         if(!item.isDefaultItem) {
+            //This checks if there is space still in the inventory
+            //For our game, it's not necessary
             if(items.Count >= space) {
                 Debug.Log("Not enough room.");
                 return false;

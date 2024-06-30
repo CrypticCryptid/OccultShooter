@@ -17,4 +17,4 @@ public class Equipment : Item
     }
 }
 
-public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield, Feet}
+public enum EquipmentSlot {Knife, Gun, ASpellOne, ASpellTwo, PSpellOne, PSpellTwo, Offering}
