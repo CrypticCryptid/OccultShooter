@@ -8,14 +8,20 @@ public class ShopPickUp : Interactable
         base.Interact();
 
         //If player has enough money then...
-        PickUp();
+        BuyItem();
     }
 
-    void PickUp() {
+    void BuyItem() {
         Debug.Log("Buying " + item.name);
-        bool wasPickedUp = Inventory.instance.Add(item);
+        bool wasBought = Inventory.instance.Add(item);
 
-        if(wasPickedUp)
-            Destroy(gameObject);
+        if(wasBought) {
+            RemoveFromShop();
+        }
+    }
+
+    void RemoveFromShop() {
+        //Logic to remvoe the tiem from the shop's inventory
+        Destroy(gameObject); //Assuming this removes the shop item from the scene
     }
 }

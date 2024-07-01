@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7987646394629746717}
   - component: {fileID: 5950834420905275582}
   - component: {fileID: 6868266511480208111}
-  - component: {fileID: 6482303829205939068}
+  - component: {fileID: -704766515006429876}
   m_Layer: 0
   m_Name: Test Item_Red
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6482303829205939068
+--- !u!114 &-704766515006429876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6091197320054174431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ea22edc886ce846a2377f57a2773a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bd00dfa7b7c67c499ca9c1f7b3c2d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3

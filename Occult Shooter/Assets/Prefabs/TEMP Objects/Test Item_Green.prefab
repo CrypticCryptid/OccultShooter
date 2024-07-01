@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3479779748983252859}
   - component: {fileID: 9070286310957752037}
   - component: {fileID: 171093309187760698}
-  - component: {fileID: 3567792390077330981}
+  - component: {fileID: -3356266902404135057}
   m_Layer: 0
   m_Name: Test Item_Green
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3567792390077330981
+--- !u!114 &-3356266902404135057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4787763139108910762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ea22edc886ce846a2377f57a2773a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bd00dfa7b7c67c499ca9c1f7b3c2d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3

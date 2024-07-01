@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Transform itemsParent;
+    //public Transform itemsParent;
     public GameObject inventoryUI;
 
     public Transform pedestalsParent;
     
     Inventory inventory;
 
-    InventorySlot[] slots;
+    //InventorySlot[] slots;
     InventoryPedestal[] pedestals;
 
     void Start()
@@ -17,7 +17,7 @@ public class InventoryUI : MonoBehaviour
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        //slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         pedestals = pedestalsParent.GetComponentsInChildren<InventoryPedestal>();
     }
     

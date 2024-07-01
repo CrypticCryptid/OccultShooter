@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3286,7 +3286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd67155d8910a94e8a355a158b55bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsParent: {fileID: 96679873}
   inventoryUI: {fileID: 1136044697}
   pedestalsParent: {fileID: 1814713857}
 --- !u!1 &1059664120
@@ -3621,11 +3620,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 57269292498270637, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: sensX
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 57269292498270637, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: sensY
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 171427422146026096, guid: 092dd2a61d09bb34e8171d5c04f41c51, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -6116,7 +6115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca36e143704ef8e498dd8a5d9211e6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: 20
+  space: 6
   items: []
 --- !u!114 &1602996422
 MonoBehaviour:
@@ -7191,7 +7190,7 @@ GameObject:
   - component: {fileID: 171093308761752472}
   - component: {fileID: 9070286309722718024}
   m_Layer: 0
-  m_Name: Test Item_Green
+  m_Name: Test Shop_Item_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
