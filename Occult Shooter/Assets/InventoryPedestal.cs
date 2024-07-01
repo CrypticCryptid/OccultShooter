@@ -15,19 +15,25 @@ public class InventoryPedestal : MonoBehaviour
     public void AddItem(Item newItem) {
         item = newItem;
 
-        if(!hasItem) {
-            pedestalModel = Instantiate(item.model, modelPos.position, Quaternion.identity);
-            hasItem = true;
-        } else {
-            pedestalModel.SetActive(true);
-        }
+        pedestalModel = Instantiate(item.model, modelPos.position, Quaternion.identity);
+        pedestalModel.SetActive(true);         
+
+        // if(!hasItem) {
+        //     pedestalModel = Instantiate(item.model, modelPos.position, Quaternion.identity);
+        //     hasItem = true;
+        // } else {
+        //     pedestalModel.SetActive(true);
+        // }
         
     }
 
     public void ClearSlot() {
         item = null;
 
+        pedestalModel = null;
         pedestalModel.SetActive(false);
+
+        //pedestalModel.SetActive(false);
     }
 
     // public void UseItem() { //This function was used for when the item was clicked in the UI to activate it. Probably just used to equip in our game
