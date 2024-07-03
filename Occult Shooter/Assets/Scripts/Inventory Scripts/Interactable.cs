@@ -5,51 +5,46 @@ public class Interactable : MonoBehaviour
     public float radius = 3f;
     public Transform interactionTransform;
 
-    //bool isFocus = false;
-    Transform player;
+    private Transform player;
+    private bool hasInteracted = false;
+    private bool isClose = false;
 
-    bool hasInteracted = false;
-    
-    bool isClose = false;
-
-    public virtual void Interact() {
-        //This method is meant to be overwritten
+    public virtual void Interact()
+    {
         Debug.Log("Interacting with " + transform.name);
         hasInteracted = true;
-    }    
-
-    void Awake() {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Update() {
-        if(!hasInteracted) {
-            float distance = Vector3.Distance(player.position, interactionTransform.position);
-            if(distance <= radius) {
-                isClose = true;
-            } else {
-                isClose = false;
-            }
+    void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (interactionTransform == null)
+        {
+            interactionTransform = transform;
         }
     }
 
-    // public void OnFocused(Transform playerTransform) {
-    //     isFocus = true;
-    //     player = playerTransform;
-    // }
+    void Update()
+    {
+        if (!hasInteracted)
+        {
+            float distance = Vector3.Distance(player.position, interactionTransform.position);
+            isClose = distance <= radius;
+        }
+    }
 
-    // public void OnDefocused() {
-    //     isFocus = false;
-    //     player = null;
-    // }
-
-    public bool IsClose() {
+    public bool IsClose()
+    {
         return isClose;
     }
 
-    void OnDrawGizmosSelected() {
-        if(interactionTransform == null)
+    void OnDrawGizmosSelected()
+    {
+        if (interactionTransform == null)
+        {
             interactionTransform = transform;
+        }
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(interactionTransform.position, radius);

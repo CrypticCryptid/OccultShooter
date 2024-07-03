@@ -4,7 +4,7 @@ public class InventoryPedestal : MonoBehaviour
 {
     public Transform modelPos;
     private GameObject pedestalModel;
-    private Item item;
+    public Item item; // Make item public to be accessible from InventoryEquip
 
     public void AddItem(Item newItem)
     {

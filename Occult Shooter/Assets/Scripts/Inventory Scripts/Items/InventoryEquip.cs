@@ -1,14 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryEquip : Interactable
 {
     public Item item;
-    private InventoryPedestal pedestal;
-
-    private void Start()
-    {
-        pedestal = GetComponentInParent<InventoryPedestal>();
-    }
 
     public override void Interact()
     {
@@ -18,10 +14,19 @@ public class InventoryEquip : Interactable
 
     void EquipItem()
     {
-        if (item is Equipment equipmentItem)
+        if (item != null)
         {
-            EquipmentManager.instance.Equip(equipmentItem);
-            pedestal.ClearSlot(); // Clear the pedestal once the item is equipped
+            EquipmentManager.instance.Equip(item as Equipment);
+
+            // Remove item from inventory
+            Inventory.instance.Remove(item);
+
+            // Optionally, destroy the pedestal GameObject or handle item removal visually
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("No item assigned to InventoryEquip.");
         }
     }
 }

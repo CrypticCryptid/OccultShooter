@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3479779748983252859}
   - component: {fileID: 9070286310957752037}
   - component: {fileID: 171093309187760698}
-  - component: {fileID: -3356266902404135057}
+  - component: {fileID: 5017695450104451355}
   m_Layer: 0
   m_Name: Test Item_Green
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3356266902404135057
+--- !u!114 &5017695450104451355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  interactionTransform: {fileID: 4007659358532701165}
+  interactionTransform: {fileID: 0}
   item: {fileID: 11400000, guid: b300d857b1e330e4d9b8a17f9eac4697, type: 2}
