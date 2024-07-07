@@ -41,19 +41,40 @@ public class EquipmentManager : MonoBehaviour
         int slotIndex = (int)newItem.equipSlot;
 
         Equipment oldItem = null;
+        Equipment returnItem = null;
 
-        if (currentEquipment[slotIndex] != null)
-        {
-            oldItem = currentEquipment[slotIndex];
-            inventory.Add(oldItem);
+        if(slotIndex == 2 || slotIndex == 4) { //The item being equipped is an active/passive spell
+            if (currentEquipment[slotIndex] != null)
+            {
+                if(currentEquipment[slotIndex + 1] != null) {
+                    returnItem = currentEquipment[slotIndex + 1];
+                    inventory.Add(returnItem);
+                }
+
+                oldItem = currentEquipment[slotIndex];
+                currentEquipment[slotIndex + 1] = oldItem;
+            }
+
+            if (onEquipmentChanged != null)
+            {
+                onEquipmentChanged.Invoke(newItem, oldItem);
+            }
+
+            currentEquipment[slotIndex] = newItem;
+        } else { //The item being equipped is something else
+            if (currentEquipment[slotIndex] != null)
+            {
+                oldItem = currentEquipment[slotIndex];
+                inventory.Add(oldItem);
+            }
+
+            if (onEquipmentChanged != null)
+            {
+                onEquipmentChanged.Invoke(newItem, oldItem);
+            }
+
+            currentEquipment[slotIndex] = newItem;
         }
-
-        if (onEquipmentChanged != null)
-        {
-            onEquipmentChanged.Invoke(newItem, oldItem);
-        }
-
-        currentEquipment[slotIndex] = newItem;
     }
 
     public void Unequip(int slotIndex)
